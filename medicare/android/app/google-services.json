@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "346109593085",
+    "firebase_url": "https://virusandmedicine-1d341-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "virusandmedicine-1d341",
+    "storage_bucket": "virusandmedicine-1d341.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:346109593085:android:4144e29bf43337bcadc594",
+        "android_client_info": {
+          "package_name": "com.groupi.medicare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "346109593085-n3l9pe5biocjp3f7dpulf5qeob1b1b68.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqb_BzIzYjiqGg7Y6EE__rk2c51DnyBY0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "346109593085-n3l9pe5biocjp3f7dpulf5qeob1b1b68.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
