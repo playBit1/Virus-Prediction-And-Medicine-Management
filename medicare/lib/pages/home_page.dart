@@ -1,6 +1,8 @@
+import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:medicare/authenticate.dart';
 import 'package:flutter/material.dart';
+import 'package:medicare/pages/medicine_manager_page.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
@@ -17,6 +19,20 @@ class HomePage extends StatelessWidget {
 
   Widget _userUid() {
     return Text(user?.email ?? 'User email');
+  }
+
+  Widget _goToMeds(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => const MedsPage(),
+          ),
+        );
+      },
+      child: const Text('Display Meds!'),
+    );
   }
 
   Widget _signOutButton() {
@@ -40,6 +56,7 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            _goToMeds(context),
             _userUid(),
             _signOutButton(),
           ],

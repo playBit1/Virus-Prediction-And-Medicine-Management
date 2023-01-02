@@ -13,6 +13,7 @@ class _LoginPageState extends State<LoginPage> {
   String? errorMessage = '';
   bool isLogin = true;
 
+  final TextEditingController _controllerName = TextEditingController();
   final TextEditingController _controllerEmail = TextEditingController();
   final TextEditingController _controllerPassword = TextEditingController();
 
@@ -32,6 +33,7 @@ class _LoginPageState extends State<LoginPage> {
   Future<void> createAccWithEmailAndPassword() async {
     try {
       await Authenticate().createAccWithEmailAndPassword(
+        name: _controllerName.text,
         email: _controllerEmail.text,
         password: _controllerPassword.text,
       );
@@ -81,6 +83,10 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
+  Widget _addName() {
+    return isLogin ? Container() : _entryField('Name', _controllerName);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,8 +101,9 @@ class _LoginPageState extends State<LoginPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            _entryField('email', _controllerEmail),
-            _entryField('password', _controllerPassword),
+            _addName(),
+            _entryField('Email', _controllerEmail),
+            _entryField('Password', _controllerPassword),
             _errorMessage(),
             _submitButton(),
             _loginOrRegisterButton(),

@@ -16,6 +16,7 @@ class Authenticate {
   }
 
   Future<void> createAccWithEmailAndPassword({
+    required String name,
     required String email,
     required String password,
   }) async {
@@ -23,9 +24,22 @@ class Authenticate {
       email: email,
       password: password,
     );
+    currentUser?.updateDisplayName(name);
   }
 
   Future<void> signOut() async {
     await _firebaseAuth.signOut();
+  }
+
+  String? getUid() {
+    return currentUser?.uid;
+  }
+
+  void updateUserName(String name) {
+    currentUser?.updateDisplayName(name);
+  }
+
+  String? getCurrentUserName() {
+    return currentUser?.displayName;
   }
 }
