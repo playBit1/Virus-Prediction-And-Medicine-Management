@@ -1,0 +1,163 @@
+      body: Column(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Container(
+              alignment: Alignment.center,
+              color: Colors.amber,
+              child: const Text('Fuck'),
+            ),
+          ),
+          Expanded(
+            flex: 3,
+            child: Container(
+              alignment: Alignment.center,
+              decoration: const BoxDecoration(
+                color: Colors.blueGrey,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10)),
+              ),
+              child: const Text('Hello'),
+            ),
+          ),
+        ],
+      ),
+
+
+Widget _topScreen(String name) {
+  return Flexible(
+    child: FractionallySizedBox(
+      heightFactor: 0.25,
+      widthFactor: 1,
+      child: Container(
+        color: Colors.amber[600],
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 0, 0, 10),
+              child: Text(
+                'Hey, $name!',
+                style: const TextStyle(fontSize: 45),
+              ),
+            ),
+          ],
+        ),
+      ),
+    ),
+  );
+}
+
+
+
+  Widget _createLink() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          "Don't Have an Account?",
+          style: TextStyle(
+            fontStyle: FontStyle.italic,
+            fontSize: 18,
+            color: Colors.black,
+          ),
+        ),
+        TextButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: ((context) => Createacc()),
+              ),
+            );
+          },
+          child: Text(
+            "Create",
+            style: TextStyle(
+              color: Colors.blueAccent,
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+              decoration: TextDecoration.underline,
+            ),
+          ),
+        )
+      ],
+    );
+  }
+
+
+
+                      child: DropdownButtonHideUnderline(
+                      child: DropdownButton<String>(
+                        value: _beforeOrAfterMealFirstValue,
+                        items: _beforeOrAfterMealOptions.map((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
+                        onChanged: ((value) => setState(
+                              (() {
+                                _beforeOrAfterMealFirstValue = value;
+                                _controllerBeforeOrAfterMeal.text = value!;
+                              }),
+                            )),
+                      ),
+                    ),
+
+
+
+  Widget _formFields(
+    bool isTextField,
+    bool isAmount,
+    List<String> dropOptions,
+    String? firstOption,
+    TextEditingController controller,
+    String imageName,
+    String message,
+  ) {
+    return Container(
+      width: 300,
+      decoration: BoxDecoration(
+        border: Border.all(),
+        borderRadius: const BorderRadius.all(
+          Radius.circular(15),
+        ),
+      ),
+      child: IntrinsicHeight(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/icons/$imageName.png',
+              height: 30,
+              width: 30,
+            ),
+            const VerticalDivider(
+              color: Colors.black87,
+              indent: 10,
+              endIndent: 10,
+            ),
+            SizedBox(
+              width: 230,
+              child: isTextField
+                  ? _dropDownFields(
+                      dropOptions,
+                      firstOption,
+                      controller,
+                      imageName,
+                      message,
+                    )
+                  : _entryField(
+                      message,
+                      controller,
+                      isAmount,
+                    ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
