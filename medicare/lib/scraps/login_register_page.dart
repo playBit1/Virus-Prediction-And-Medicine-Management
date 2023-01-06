@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:medicare/authenticate.dart';
+import 'package:medicare/database/authenticate.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class Lpage extends StatefulWidget {
+  const Lpage({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<Lpage> createState() => _LpageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LpageState extends State<Lpage> {
   String? errorMessage = '';
   bool isLogin = true;
 

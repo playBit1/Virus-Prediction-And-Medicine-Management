@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:medicare/authenticate.dart';
+import 'package:medicare/database/authenticate.dart';
 import 'package:flutter/material.dart';
 import 'package:medicare/pages/medicine_manager_page.dart';
 

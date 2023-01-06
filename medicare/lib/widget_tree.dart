@@ -1,7 +1,7 @@
-import 'package:medicare/authenticate.dart';
+import 'package:medicare/database/authenticate.dart';
 import 'package:medicare/pages/home_page.dart';
-import 'package:medicare/pages/login_register_page.dart';
 import 'package:flutter/material.dart';
+import 'package:medicare/pages/login_page.dart';
 
 class WidgetTree extends StatefulWidget {
   const WidgetTree({Key? key}) : super(key: key);

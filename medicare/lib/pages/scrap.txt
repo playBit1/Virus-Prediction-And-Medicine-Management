@@ -49,3 +49,115 @@ Widget _topScreen(String name) {
     ),
   );
 }
+
+
+
+  Widget _createLink() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          "Don't Have an Account?",
+          style: TextStyle(
+            fontStyle: FontStyle.italic,
+            fontSize: 18,
+            color: Colors.black,
+          ),
+        ),
+        TextButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: ((context) => Createacc()),
+              ),
+            );
+          },
+          child: Text(
+            "Create",
+            style: TextStyle(
+              color: Colors.blueAccent,
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+              decoration: TextDecoration.underline,
+            ),
+          ),
+        )
+      ],
+    );
+  }
+
+
+
+                      child: DropdownButtonHideUnderline(
+                      child: DropdownButton<String>(
+                        value: _beforeOrAfterMealFirstValue,
+                        items: _beforeOrAfterMealOptions.map((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
+                        onChanged: ((value) => setState(
+                              (() {
+                                _beforeOrAfterMealFirstValue = value;
+                                _controllerBeforeOrAfterMeal.text = value!;
+                              }),
+                            )),
+                      ),
+                    ),
+
+
+
+  Widget _formFields(
+    bool isTextField,
+    bool isAmount,
+    List<String> dropOptions,
+    String? firstOption,
+    TextEditingController controller,
+    String imageName,
+    String message,
+  ) {
+    return Container(
+      width: 300,
+      decoration: BoxDecoration(
+        border: Border.all(),
+        borderRadius: const BorderRadius.all(
+          Radius.circular(15),
+        ),
+      ),
+      child: IntrinsicHeight(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              'assets/icons/$imageName.png',
+              height: 30,
+              width: 30,
+            ),
+            const VerticalDivider(
+              color: Colors.black87,
+              indent: 10,
+              endIndent: 10,
+            ),
+            SizedBox(
+              width: 230,
+              child: isTextField
+                  ? _dropDownFields(
+                      dropOptions,
+                      firstOption,
+                      controller,
+                      imageName,
+                      message,
+                    )
+                  : _entryField(
+                      message,
+                      controller,
+                      isAmount,
+                    ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }

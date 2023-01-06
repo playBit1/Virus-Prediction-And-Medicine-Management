@@ -11,6 +11,7 @@ class MedicationData {
   String? beforeOrAfterMeal;
   String? totalQty;
   String? intakeTime;
+  String? imageName;
 
   MedicationData({
     this.name,
@@ -18,6 +19,7 @@ class MedicationData {
     this.beforeOrAfterMeal,
     this.totalQty,
     this.intakeTime,
+    this.imageName,
   });
 
   MedicationData.fromJson(Map<dynamic, dynamic> json) {
@@ -26,5 +28,6 @@ class MedicationData {
     beforeOrAfterMeal = json['beforeOrAfterMeal'];
     totalQty = json['totalQty'];
     intakeTime = json['intakeTime'];
+    imageName = json['imageName'];
   }
 }
