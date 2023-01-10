@@ -4,7 +4,7 @@
     "type": "COMPATIBLE_SCREEN_MANIFEST",
     "kind": "Directory"
   },
-  "applicationId": "com.groupi.medicare",
+  "applicationId": "com.teami.medicare",
   "variantName": "debug",
   "elements": []
 }

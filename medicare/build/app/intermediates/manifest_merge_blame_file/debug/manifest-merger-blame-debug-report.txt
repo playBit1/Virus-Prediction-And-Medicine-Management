@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.groupi.medicare"
+3    package="com.teami.medicare"
 4    android:versionCode="1"
 5    android:versionName="1.0.0" >
 6
@@ -208,7 +208,7 @@
 131-->[com.google.firebase:firebase-common:20.2.0] C:\Users\binul\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:25:9-30:39
 132            android:name="com.google.firebase.provider.FirebaseInitProvider"
 132-->[com.google.firebase:firebase-common:20.2.0] C:\Users\binul\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:26:13-77
-133            android:authorities="com.groupi.medicare.firebaseinitprovider"
+133            android:authorities="com.teami.medicare.firebaseinitprovider"
 133-->[com.google.firebase:firebase-common:20.2.0] C:\Users\binul\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:27:13-72
 134            android:directBootAware="true"
 134-->[com.google.firebase:firebase-common:20.2.0] C:\Users\binul\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:28:13-43

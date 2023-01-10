@@ -124,17 +124,17 @@
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="copy_toast_msg">Link copied to clipboard</string>
-    <string name="default_web_client_id" translatable="false">346109593085-n3l9pe5biocjp3f7dpulf5qeob1b1b68.apps.googleusercontent.com</string>
+    <string name="default_web_client_id" translatable="false">396539839641-0q5593u3o4rps3saktfilq6ipqn2gmrt.apps.googleusercontent.com</string>
     <string name="fallback_menu_item_copy_link">Copy link</string>
     <string name="fallback_menu_item_open_in_browser">Open in browser</string>
     <string name="fallback_menu_item_share_link">Share link</string>
-    <string name="firebase_database_url" translatable="false">https://virusandmedicine-1d341-default-rtdb.asia-southeast1.firebasedatabase.app</string>
-    <string name="gcm_defaultSenderId" translatable="false">346109593085</string>
-    <string name="google_api_key" translatable="false">AIzaSyCqb_BzIzYjiqGg7Y6EE__rk2c51DnyBY0</string>
-    <string name="google_app_id" translatable="false">1:346109593085:android:4144e29bf43337bcadc594</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCqb_BzIzYjiqGg7Y6EE__rk2c51DnyBY0</string>
-    <string name="google_storage_bucket" translatable="false">virusandmedicine-1d341.appspot.com</string>
-    <string name="project_id" translatable="false">virusandmedicine-1d341</string>
+    <string name="firebase_database_url" translatable="false">https://virusandmedicine-46af5-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+    <string name="gcm_defaultSenderId" translatable="false">396539839641</string>
+    <string name="google_api_key" translatable="false">AIzaSyAMCJWhoX22p2L-VFjIRot-FNt09JjEU3A</string>
+    <string name="google_app_id" translatable="false">1:396539839641:android:2eea74f6fec74e7802e408</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAMCJWhoX22p2L-VFjIRot-FNt09JjEU3A</string>
+    <string name="google_storage_bucket" translatable="false">virusandmedicine-46af5.appspot.com</string>
+    <string name="project_id" translatable="false">virusandmedicine-46af5</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
         <!-- Show a splash screen on the activity. Automatically removed when

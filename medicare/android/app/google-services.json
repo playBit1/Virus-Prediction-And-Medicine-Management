@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "346109593085",
-    "firebase_url": "https://virusandmedicine-1d341-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "virusandmedicine-1d341",
-    "storage_bucket": "virusandmedicine-1d341.appspot.com"
+    "project_number": "396539839641",
+    "firebase_url": "https://virusandmedicine-46af5-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "virusandmedicine-46af5",
+    "storage_bucket": "virusandmedicine-46af5.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:346109593085:android:4144e29bf43337bcadc594",
+        "mobilesdk_app_id": "1:396539839641:android:2eea74f6fec74e7802e408",
         "android_client_info": {
-          "package_name": "com.groupi.medicare"
+          "package_name": "com.teami.medicare"
         }
       },
       "oauth_client": [
         {
-          "client_id": "346109593085-n3l9pe5biocjp3f7dpulf5qeob1b1b68.apps.googleusercontent.com",
+          "client_id": "396539839641-0q5593u3o4rps3saktfilq6ipqn2gmrt.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCqb_BzIzYjiqGg7Y6EE__rk2c51DnyBY0"
+          "current_key": "AIzaSyAMCJWhoX22p2L-VFjIRot-FNt09JjEU3A"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "346109593085-n3l9pe5biocjp3f7dpulf5qeob1b1b68.apps.googleusercontent.com",
+              "client_id": "396539839641-0q5593u3o4rps3saktfilq6ipqn2gmrt.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

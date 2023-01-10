@@ -2,7 +2,8 @@ import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:medicare/database/authenticate.dart';
 import 'package:flutter/material.dart';
-import 'package:medicare/pages/medicine_manager_page.dart';
+import 'package:medicare/pages/medicine_manager_pages/medicine_manager_page.dart';
+import 'package:medicare/pages/virus_predictor_home_page.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
@@ -35,6 +36,20 @@ class HomePage extends StatelessWidget {
     );
   }
 
+  Widget _goToVirus(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => const VirusHomePage(),
+          ),
+        );
+      },
+      child: const Text('Virus Predictor'),
+    );
+  }
+
   Widget _signOutButton() {
     return ElevatedButton(
       onPressed: signOut,
@@ -57,6 +72,7 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             _goToMeds(context),
+            _goToVirus(context),
             _userUid(),
             _signOutButton(),
           ],

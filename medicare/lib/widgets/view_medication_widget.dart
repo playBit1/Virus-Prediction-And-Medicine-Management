@@ -1,10 +1,9 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:medicare/database/medication.dart';
 import 'package:medicare/widgets/delete_medication_widget.dart';
-import 'package:medicare/pages/add_update_medicine_page.dart';
-import 'package:medicare/pages/medicine_manager_page.dart';
+import 'package:medicare/pages/medicine_manager_pages/add_update_medicine_page.dart';
+import 'package:medicare/pages/medicine_manager_pages/medicine_manager_page.dart';
 
 Widget displayMedication(
   BuildContext context,
