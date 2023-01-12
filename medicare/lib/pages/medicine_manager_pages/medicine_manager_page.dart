@@ -102,24 +102,21 @@ class _MedsPageState extends State<MedsPage> {
           Positioned(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
-            left: 280,
             child: Container(
-              alignment: Alignment.topLeft,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 50, top: 20),
-                child: Transform.scale(
-                  scale: 1.5,
-                  child: IconButton(
-                    onPressed: () => showDialog(
-                      context: context,
-                      builder: ((BuildContext context) => userDialogBox(
-                            context,
-                            _userName,
-                            _medicationDataStream,
-                          )),
-                    ),
-                    icon: Image.asset('assets/icons/user.png'),
+              alignment: Alignment.topRight,
+              padding: const EdgeInsets.only(top: 20, right: 25),
+              child: Transform.scale(
+                scale: 2,
+                child: IconButton(
+                  onPressed: () => showDialog(
+                    context: context,
+                    builder: ((BuildContext context) => userDialogBox(
+                          context,
+                          _userName,
+                          _medicationDataStream,
+                        )),
                   ),
+                  icon: Image.asset('assets/icons/logo.png'),
                 ),
               ),
             ),

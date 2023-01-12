@@ -39,11 +39,6 @@ class _AddMedicineState extends State<AddMedicine> {
   final TextEditingController _controllerIntakeTime = TextEditingController();
   final TextEditingController _controllerImageName = TextEditingController();
 
-  //bool _nameValidate = false;
-  //bool _intakeValidate = false;
-  //bool _TotalValidate = false;
-  //bool _IntakeTimeValidate = false;
-
   String errorMessage = '';
 
   @override
@@ -213,7 +208,8 @@ class _AddMedicineState extends State<AddMedicine> {
     String message,
   ) {
     widget.isAdd ? '' : firstOption = controller.text;
-    controller.text = firstOption!;
+    controller.text == '' ? controller.text = firstOption! : '';
+
     return DropdownButtonHideUnderline(
       child: DropdownButtonFormField<String>(
         decoration: InputDecoration(labelText: message),
@@ -273,6 +269,7 @@ class _AddMedicineState extends State<AddMedicine> {
                 padding: const EdgeInsets.all(20),
                 child: Column(
                   children: [
+                    Text(_controllerImageName.text),
                     Text(errorMessage),
                     _formFields(
                       true,
