@@ -10,9 +10,8 @@ class CovidQuestionare extends StatefulWidget {
 class _CovidQuestionareState extends State<CovidQuestionare> {
   double progressValue = 0;
   String currentQuestion = 'simple';
-  bool conditionQuestionsOver = false;
-  bool travelQuestionsOver = false;
-  bool pageTwoOver = false;
+  bool isEnd = false;
+
   List<List> covidScaleQuestionList1 = [
     ['Breathing Problems', 0],
     ['Fever', 0],
@@ -35,8 +34,6 @@ class _CovidQuestionareState extends State<CovidQuestionare> {
     ['Chronic Lung Diseases', false],
   ];
 
-  List<List> covidCompletedQuestionsList = [];
-
   List advCovidBoolQuestions = [
     ['Traveled Abroad', false],
     ['Wore A Mask In Public Spaces', false],
@@ -46,6 +43,33 @@ class _CovidQuestionareState extends State<CovidQuestionare> {
     ['Used Sanitization', false],
     ['Contact With A Covid Patient', false],
   ];
+
+  List covidCompletedQuestionsList = [];
+
+  void _packageCovidQuestions() {
+    covidCompletedQuestionsList = [
+      covidScaleQuestionList1[0][1].round(),
+      covidScaleQuestionList1[1][1].round(),
+      covidScaleQuestionList1[2][1].round(),
+      covidScaleQuestionList1[3][1].round(),
+      covidScaleQuestionList2[0][1].round(),
+      simpleCovidBoolQuestions[0][1],
+      simpleCovidBoolQuestions[5][1],
+      covidScaleQuestionList2[1][1].round(),
+      simpleCovidBoolQuestions[1][1],
+      simpleCovidBoolQuestions[2][1],
+      simpleCovidBoolQuestions[3][1],
+      covidScaleQuestionList2[2][1].round(),
+      simpleCovidBoolQuestions[4][1],
+      advCovidBoolQuestions[0][1],
+      advCovidBoolQuestions[6][1],
+      advCovidBoolQuestions[2][1],
+      advCovidBoolQuestions[3][1],
+      advCovidBoolQuestions[4][1],
+      advCovidBoolQuestions[1][1],
+      advCovidBoolQuestions[5][1],
+    ];
+  }
 
   Widget _sliderQuestions(bool isFirstList) {
     List tempList =
@@ -263,16 +287,20 @@ class _CovidQuestionareState extends State<CovidQuestionare> {
                         currentQuestion = 'advanced';
                       } else if (currentQuestion == 'advanced') {
                         currentQuestion = 'slider1';
-                      } else {
+                      } else if (currentQuestion == 'slider1') {
                         currentQuestion = 'slider2';
+                        isEnd = true;
+                      } else {
+                        _packageCovidQuestions();
+                        print(covidCompletedQuestionsList);
                       }
                       progressValue += 0.335;
                       setState(() {});
                     },
-                    child: const Text(
-                      'Next',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                    child: Text(
+                      isEnd ? 'Finish' : 'Next',
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.w500),
                     ),
                   ),
                 ),
