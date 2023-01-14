@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:medicare/pages/virus_predictor_pages/virus_results_page.dart';
+import 'package:medicare/rest_api/api_service.dart';
 
 class MonkeyQuestionare extends StatefulWidget {
   const MonkeyQuestionare({super.key});
@@ -10,14 +12,11 @@ class MonkeyQuestionare extends StatefulWidget {
 class _MonkeyQuestionareState extends State<MonkeyQuestionare> {
   double progressValue = 0;
   String currentQuestion = 'illness';
-  bool conditionQuestionsOver = false;
-  bool travelQuestionsOver = false;
-  bool pageTwoOver = false;
+  bool isEnd = false;
 
   List<List> monkeyIllnessList = [
-    ['Fever', false],
+    ['Continued High Fever', false],
     ['Swollen Lymph Nodes', false],
-    ['Muscle Aches', false],
     ['Muscle Aches And Pain', false],
   ];
 
@@ -35,7 +34,33 @@ class _MonkeyQuestionareState extends State<MonkeyQuestionare> {
     ['sore throat', 0],
   ];
 
-  List<List> monkeyCompletedQuestionMap = [];
+  List monkeyCompletedQuestionList = [];
+
+  void packageMonkeyQuestions() {
+    List illnessValue = [0];
+
+    if (monkeyIllnessList[0][1]) {
+      illnessValue = [1];
+    }
+    if (monkeyIllnessList[1][1]) {
+      illnessValue = [2];
+    }
+    if (monkeyIllnessList[2][1]) {
+      illnessValue = [3];
+    }
+
+    monkeyCompletedQuestionList = [
+      illnessValue,
+      monkeySymptomList[0][1],
+      monkeySliderList[0][1].round(),
+      monkeySymptomList[1][1],
+      monkeySymptomList[2][1],
+      monkeySymptomList[3][1],
+      monkeySymptomList[4][1],
+      monkeySymptomList[5][1],
+      monkeySymptomList[6][1],
+    ];
+  }
 
   Widget _sliderQuestions() {
     return Container(
@@ -240,16 +265,28 @@ class _MonkeyQuestionareState extends State<MonkeyQuestionare> {
                     onPressed: () {
                       if (currentQuestion == 'illness') {
                         currentQuestion = 'symptom';
-                      } else {
+                      } else if (currentQuestion == 'symptom') {
                         currentQuestion = 'slider';
+                        isEnd = true;
+                      } else {
+                        packageMonkeyQuestions();
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => ResultsPage(
+                              isCovid: false,
+                              userData: monkeyCompletedQuestionList,
+                            ),
+                          ),
+                        );
                       }
                       progressValue += 0.35;
                       setState(() {});
                     },
-                    child: const Text(
-                      'Next',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                    child: Text(
+                      isEnd ? 'Finish' : 'Next',
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.w500),
                     ),
                   ),
                 ),

@@ -1,7 +1,7 @@
 medicare
 2.18
-file:///C:/Users/binul/OneDrive/Desktop/New%20folder/medicare/
-file:///C:/Users/binul/OneDrive/Desktop/New%20folder/medicare/lib/
+file:///C:/Users/binul/OneDrive/Desktop/Virus-Prediction-And-Medicine-Management/medicare/
+file:///C:/Users/binul/OneDrive/Desktop/Virus-Prediction-And-Medicine-Management/medicare/lib/
 _flutterfire_internals
 2.16
 file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/_flutterfire_internals-1.0.12/
@@ -74,6 +74,10 @@ flutter_lints
 2.17
 file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/
 file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_lints-2.0.1/lib/
+http
+2.14
+file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.5/
+file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.5/lib/
 http_parser
 2.12
 file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.2/

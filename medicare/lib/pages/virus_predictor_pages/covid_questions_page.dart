@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medicare/pages/virus_predictor_pages/virus_results_page.dart';
 
 class CovidQuestionare extends StatefulWidget {
   const CovidQuestionare({super.key});
@@ -292,7 +293,15 @@ class _CovidQuestionareState extends State<CovidQuestionare> {
                         isEnd = true;
                       } else {
                         _packageCovidQuestions();
-                        print(covidCompletedQuestionsList);
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => ResultsPage(
+                              isCovid: true,
+                              userData: covidCompletedQuestionsList,
+                            ),
+                          ),
+                        );
                       }
                       progressValue += 0.335;
                       setState(() {});

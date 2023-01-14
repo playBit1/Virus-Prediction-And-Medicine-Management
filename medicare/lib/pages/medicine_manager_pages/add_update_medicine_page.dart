@@ -59,6 +59,7 @@ class _AddMedicineState extends State<AddMedicine> {
 
   Widget _backButton() {
     return IconButton(
+      padding: const EdgeInsets.only(left: 5, top: 20),
       onPressed: () => Navigator.pop(context),
       icon: Image.asset('assets/icons/backArrow.png'),
       iconSize: 50,
