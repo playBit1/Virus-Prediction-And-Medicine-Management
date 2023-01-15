@@ -1,5 +1,6 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:medicare/database/authenticate.dart';
 import 'package:medicare/database/medication.dart';
 
@@ -190,7 +191,7 @@ class _AddMedicineState extends State<AddMedicine> {
     TextEditingController controller,
     bool isAmount,
   ) {
-    return TextField(
+    return TextFormField(
       controller: controller,
       decoration: InputDecoration(
         labelText: title,
@@ -198,6 +199,11 @@ class _AddMedicineState extends State<AddMedicine> {
       ),
       keyboardType: isAmount ? TextInputType.number : TextInputType.text,
       maxLength: isAmount ? 4 : 25,
+      inputFormatters: isAmount
+          ? [
+              FilteringTextInputFormatter.digitsOnly,
+            ]
+          : [],
     );
   }
 

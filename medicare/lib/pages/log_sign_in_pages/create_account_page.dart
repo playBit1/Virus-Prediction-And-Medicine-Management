@@ -143,22 +143,25 @@ class CreateaccState extends State<Createacc> {
   }
 
   Widget _createAccButton() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Padding(padding: EdgeInsets.only(top: 120)),
-        Text(
-          'Sign Up',
-          textAlign: TextAlign.center,
-          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
-        ),
-        IconButton(
-          onPressed: createAccWithEmailAndPassword,
-          icon: Image.asset(
-            'assets/icons/loginbutton.png',
+    return InkWell(
+      onTap: createAccWithEmailAndPassword,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Padding(padding: EdgeInsets.only(top: 120)),
+          const Text(
+            'Sign Up',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
           ),
-        ),
-      ],
+          IconButton(
+            onPressed: createAccWithEmailAndPassword,
+            icon: Image.asset(
+              'assets/icons/loginbutton.png',
+            ),
+          ),
+        ],
+      ),
     );
   }
 

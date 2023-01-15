@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:medicare/pages/medicine_manager_pages/medicine_manager_page.dart';
 import 'package:medicare/pages/virus_predictor_pages/covid_questions_page.dart';
 import 'package:medicare/pages/virus_predictor_pages/monkeyp_questions_page.dart';
+import 'package:medicare/widgets/user_dialog_widget.dart';
 
 class VirusHomePage extends StatefulWidget {
   const VirusHomePage({super.key});
@@ -10,7 +12,10 @@ class VirusHomePage extends StatefulWidget {
 }
 
 class _VirusHomePageState extends State<VirusHomePage> {
-  Widget _DesignerButton(
+  int currentIndex = 0;
+  final TextEditingController _userName = TextEditingController();
+
+  Widget _designerButton(
     bool isCovid,
   ) {
     String name;
@@ -29,17 +34,50 @@ class _VirusHomePageState extends State<VirusHomePage> {
                   builder: (_) => const MonkeyQuestionare(),
                 ));
       }),
-      style: ElevatedButton.styleFrom(fixedSize: const Size(250, 150)),
+      style: ElevatedButton.styleFrom(
+        fixedSize: const Size(300, 180),
+        backgroundColor:
+            isCovid ? const Color(0xff62B6CB) : const Color(0xff30859A),
+        elevation: 10,
+      ),
       child: Column(
         children: [
           const SizedBox(height: 10),
-          Text(name),
+          Text(
+            name,
+            style: const TextStyle(fontSize: 20),
+          ),
           const SizedBox(height: 10),
           Image.asset(
-            'assets/icons/covid.png',
-            width: 100,
+            isCovid ? 'assets/icons/covid.png' : 'assets/icons/monkeypox.png',
+            width: 130,
           )
         ],
+      ),
+    );
+  }
+
+  Widget _logo(BuildContext context) {
+    return Container(
+      alignment: Alignment.topRight,
+      padding: const EdgeInsets.only(right: 25, top: 20),
+      child: IconButton(
+        onPressed: () => showDialog(
+          context: context,
+          builder: ((BuildContext context) => userDialogBoxMenu(
+                context,
+                _userName,
+              )),
+        ),
+        icon: Transform.scale(
+          scale: 2,
+          child: Image.asset(
+            'assets/icons/logo.png',
+            //alignment: Alignment.topRight,
+            width: 100,
+            height: 100,
+          ),
+        ),
       ),
     );
   }
@@ -55,6 +93,7 @@ class _VirusHomePageState extends State<VirusHomePage> {
       ),
       child: Stack(
         children: [
+          Positioned(child: _logo(context)),
           Positioned(
             height: 150,
             width: MediaQuery.of(context).size.width,
@@ -97,16 +136,45 @@ class _VirusHomePageState extends State<VirusHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  "Select Virus",
+                  'Choose you Predictor',
                   style: TextStyle(fontSize: 35),
                 ),
+                const SizedBox(height: 15),
+                _designerButton(true),
                 const SizedBox(height: 30),
-                _DesignerButton(false),
-                const SizedBox(height: 50),
-                _DesignerButton(true),
+                _designerButton(false),
               ],
             ),
           ),
+        ),
+      ],
+    );
+  }
+
+  Widget _navbar() {
+    return BottomNavigationBar(
+      currentIndex: currentIndex,
+      onTap: (value) {
+        if (value != currentIndex) {
+          Navigator.pushReplacement(
+            context,
+            PageRouteBuilder(
+              pageBuilder: ((context, animation, secondaryAnimation) =>
+                  const MedsPage()),
+              transitionDuration: Duration.zero,
+              reverseTransitionDuration: Duration.zero,
+            ),
+          );
+        }
+      },
+      items: const [
+        BottomNavigationBarItem(
+          label: 'Virus Predictor',
+          icon: Icon(Icons.coronavirus),
+        ),
+        BottomNavigationBarItem(
+          label: 'Medicine Manager',
+          icon: Icon(Icons.medication),
         ),
       ],
     );
@@ -116,6 +184,7 @@ class _VirusHomePageState extends State<VirusHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _backgroud(),
+      bottomNavigationBar: _navbar(),
     );
   }
 }

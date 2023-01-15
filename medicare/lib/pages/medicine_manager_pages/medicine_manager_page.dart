@@ -3,6 +3,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:medicare/database/authenticate.dart';
 import 'package:medicare/database/medication.dart';
+import 'package:medicare/pages/virus_predictor_pages/virus_predictor_home_page.dart';
 import 'package:medicare/widgets/user_dialog_widget.dart';
 import 'package:medicare/pages/medicine_manager_pages/add_update_medicine_page.dart';
 import 'package:medicare/widgets/view_medication_widget.dart';
@@ -21,6 +22,7 @@ class _MedsPageState extends State<MedsPage> {
   late StreamSubscription _medicationDataStream;
   List<Medication> medicationList = [];
   final TextEditingController _userName = TextEditingController();
+  int currentIndex = 1;
 
   @override
   void initState() {
@@ -45,7 +47,20 @@ class _MedsPageState extends State<MedsPage> {
 
   Widget _navbar() {
     return BottomNavigationBar(
-      currentIndex: 1,
+      currentIndex: currentIndex,
+      onTap: (value) {
+        if (value != currentIndex) {
+          Navigator.pushReplacement(
+            context,
+            PageRouteBuilder(
+              pageBuilder: ((context, animation, secondaryAnimation) =>
+                  const VirusHomePage()),
+              transitionDuration: Duration.zero,
+              reverseTransitionDuration: Duration.zero,
+            ),
+          );
+        }
+      },
       items: const [
         BottomNavigationBarItem(
           label: 'Virus Predictor',
@@ -147,6 +162,29 @@ class _MedsPageState extends State<MedsPage> {
             child: SingleChildScrollView(
               child: Column(
                 children: [
+                  if (medicationList.isEmpty)
+                    Column(
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.only(top: 150, left: 25),
+                          child: Image.asset(
+                            'assets/icons/pills-bottle.png',
+                            height: 200,
+                            opacity: const AlwaysStoppedAnimation(.5),
+                          ),
+                        ),
+                        ConstrainedBox(
+                          constraints: const BoxConstraints(maxWidth: 200),
+                          child: Text(
+                            'No Medication Avaiable',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 25,
+                                color: Colors.black.withOpacity(0.5)),
+                          ),
+                        )
+                      ],
+                    ),
                   for (int i = 0; i < medicationList.length; i++)
                     displayMedication(
                       context,

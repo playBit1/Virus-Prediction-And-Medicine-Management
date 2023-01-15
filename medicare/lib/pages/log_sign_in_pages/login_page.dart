@@ -137,22 +137,25 @@ class LoginPageState extends State<LoginPage> {
   }
 
   Widget _loginButton() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Padding(padding: EdgeInsets.only(top: 120)),
-        Text(
-          'Login',
-          textAlign: TextAlign.center,
-          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
-        ),
-        IconButton(
-          onPressed: signInWithEmailAndPassword,
-          icon: Image.asset(
-            'assets/icons/loginbutton.png',
+    return InkWell(
+      onTap: signInWithEmailAndPassword,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(padding: EdgeInsets.only(top: 120)),
+          Text(
+            'Login',
+            textAlign: TextAlign.center,
+            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
           ),
-        ),
-      ],
+          IconButton(
+            onPressed: signInWithEmailAndPassword,
+            icon: Image.asset(
+              'assets/icons/loginbutton.png',
+            ),
+          ),
+        ],
+      ),
     );
   }
 

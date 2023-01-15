@@ -117,8 +117,11 @@ Widget _goToDeleteMedicationPage(
             if (value == 'OK') {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(
-                  builder: (_) => const MedsPage(),
+                PageRouteBuilder(
+                  pageBuilder: ((context, animation, secondaryAnimation) =>
+                      const MedsPage()),
+                  transitionDuration: Duration.zero,
+                  reverseTransitionDuration: Duration.zero,
                 ),
               );
             }

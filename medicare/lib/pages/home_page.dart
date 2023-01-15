@@ -9,6 +9,7 @@ class HomePage extends StatelessWidget {
   HomePage({Key? key}) : super(key: key);
 
   final User? user = Authenticate().currentUser;
+  final TextEditingController _userName = TextEditingController();
 
   Widget _navButton(
     BuildContext context,
@@ -19,7 +20,7 @@ class HomePage extends StatelessWidget {
     String buttonName = isPredictor ? 'VIRUS PREDICTOR' : 'PILL MANAGEMENT';
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        elevation: 1,
+        elevation: 5,
         fixedSize: Size(buttonWidth, buttonHeight),
         foregroundColor: Colors.white,
         backgroundColor: isPredictor
@@ -49,9 +50,15 @@ class HomePage extends StatelessWidget {
   Widget _logo(BuildContext context) {
     return Container(
       alignment: Alignment.topRight,
-      padding: const EdgeInsets.only(right: 20),
+      padding: const EdgeInsets.only(right: 20, top: 10),
       child: IconButton(
-        onPressed: () {},
+        onPressed: () => showDialog(
+          context: context,
+          builder: ((BuildContext context) => userDialogBoxMenu(
+                context,
+                _userName,
+              )),
+        ),
         icon: Transform.scale(
           scale: 2,
           child: Image.asset(
@@ -70,6 +77,7 @@ class HomePage extends StatelessWidget {
     double buttonWidth = MediaQuery.of(context).size.width - 60;
     double buttonHeight = MediaQuery.of(context).size.height - 475;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
@@ -86,8 +94,9 @@ class HomePage extends StatelessWidget {
           children: <Widget>[
             _logo(context),
             _navButton(context, buttonWidth, buttonHeight, true),
-            const SizedBox(),
-            _navButton(context, buttonWidth, buttonHeight, false),
+            Container(
+                margin: const EdgeInsets.only(bottom: 20, top: 20),
+                child: _navButton(context, buttonWidth, buttonHeight, false)),
           ],
         ),
       ),
