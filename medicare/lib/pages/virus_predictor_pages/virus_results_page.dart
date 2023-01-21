@@ -16,7 +16,7 @@ class _ResultsPageState extends State<ResultsPage> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         IconButton(
-          padding: const EdgeInsets.only(left: 5, top: 10),
+          padding: const EdgeInsets.only(left: 10, top: 20),
           onPressed: () => Navigator.pop(context),
           icon: Image.asset('assets/icons/backArrow.png'),
           iconSize: 50,

@@ -86,8 +86,10 @@ class MlModelLoader:
         risk_probability = self.__probab_calc2(answer_list, model_name, model_inp_list)
         model_prediction = self.__predict_inputs(model_inp_list, model_name)
 
+        model_prediction = model_prediction[0].item()
+
         model_output = {
-            "model_prediction": model_prediction[0],
+            "model_prediction": model_prediction,
             "risk_probability": risk_probability
         }
 
@@ -143,5 +145,3 @@ class MlModelLoader:
         return model_output
         # except:
         # print("Error occured when finding the model file!")
-
-

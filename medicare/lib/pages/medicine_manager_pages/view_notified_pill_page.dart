@@ -10,6 +10,6 @@ class NotifiedPage extends StatefulWidget {
 class _NotifiedPageState extends State<NotifiedPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return const Scaffold();
   }
 }

@@ -1,8 +1,11 @@
 import 'dart:async';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:medicare/database/authenticate.dart';
 import 'package:medicare/database/medication.dart';
+import 'package:medicare/notification.dart';
+import 'package:medicare/pages/medicine_manager_pages/view_notified_pill_page.dart';
 import 'package:medicare/pages/virus_predictor_pages/virus_predictor_home_page.dart';
 import 'package:medicare/widgets/user_dialog_widget.dart';
 import 'package:medicare/pages/medicine_manager_pages/add_update_medicine_page.dart';
@@ -27,8 +30,19 @@ class _MedsPageState extends State<MedsPage> {
   @override
   void initState() {
     super.initState();
+    NotificationApi.init();
+    listenNotifications();
     _getMedication();
   }
+
+  void listenNotifications() =>
+      NotificationApi.onNotifications.stream.listen(onClickedNotification);
+
+  void onClickedNotification(String? payload) => Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => const NotifiedPage(),
+        ),
+      );
 
   void _getMedication() {
     _medicationDataStream =
@@ -40,6 +54,22 @@ class _MedsPageState extends State<MedsPage> {
           Medication(key: data.snapshot.key, medicationData: medicationData);
 
       medicationList.add(medication);
+
+      String? name = medicationData.name;
+      DateTime currentTime = DateTime.now();
+      DateTime scheduleTime =
+          DateFormat('H:mm').parse(medicationData.intakeTime!);
+
+      DateTime schedulingTime = DateTime(currentTime.year, currentTime.month,
+          currentTime.day, scheduleTime.hour, scheduleTime.minute);
+
+      if (currentTime.hour <= scheduleTime.hour) {
+        NotificationApi.showScheduledNotification(
+            title: medicationData.name,
+            body: 'Take $name Medicaiton now',
+            payload: 'Medicine  ',
+            scheduledDate: schedulingTime);
+      }
 
       setState(() {});
     });

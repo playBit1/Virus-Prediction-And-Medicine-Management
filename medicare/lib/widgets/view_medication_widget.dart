@@ -14,7 +14,7 @@ Widget displayMedication(
   String name = medication.medicationData!.name!;
   int dailyIntake = int.parse(medication.medicationData!.dailyIntake!);
   String beforeOrAfterMeal = medication.medicationData!.beforeOrAfterMeal!;
-  String totalQty = medication.medicationData!.totalQty!;
+  //String totalQty = medication.medicationData!.totalQty!;
   String imageName = medication.medicationData!.imageName!;
   String intakeTime = medication.medicationData!.intakeTime!;
   return Padding(

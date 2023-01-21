@@ -60,7 +60,7 @@ class _AddMedicineState extends State<AddMedicine> {
 
   Widget _backButton() {
     return IconButton(
-      padding: const EdgeInsets.only(left: 5, top: 20),
+      padding: const EdgeInsets.only(left: 10, top: 25),
       onPressed: () => Navigator.pop(context),
       icon: Image.asset('assets/icons/backArrow.png'),
       iconSize: 50,
@@ -70,7 +70,37 @@ class _AddMedicineState extends State<AddMedicine> {
   Widget _addButton() {
     return ElevatedButton(
       onPressed: () {
-        if (_controllerName.text.isEmpty ||
+        if (_controllerName.text.isEmpty) {
+          setState(() {
+            errorMessage = "Enter a Name";
+          });
+        } else if (_controllerDailyIntake.text.isEmpty) {
+          setState(() {
+            errorMessage = "Enter a Daily Intake";
+          });
+        } else if (_controllerTotalQty.text.isEmpty) {
+          setState(() {
+            errorMessage = "Enter Total Pill Amount";
+          });
+        } else if (_controllerTotalQty.text.isNotEmpty &&
+                _controllerTotalQty.text == '0' ||
+            _controllerDailyIntake.text.isNotEmpty &&
+                _controllerDailyIntake.text == '0') {
+          setState(() {
+            errorMessage = "Need At least 1 Pill!";
+          });
+        } else if (_controllerTotalQty.text.isNotEmpty &&
+            _controllerDailyIntake.text.isNotEmpty &&
+            int.parse(_controllerTotalQty.text) <
+                int.parse(_controllerDailyIntake.text)) {
+          setState(() {
+            errorMessage = "Total Pill Need To Be Higher Than Intake";
+          });
+        } else if (_controllerIntakeTime.text.isEmpty) {
+          setState(() {
+            errorMessage = "Enter a Time";
+          });
+        } else if (_controllerName.text.isEmpty ||
             _controllerDailyIntake.text.isEmpty ||
             _controllerTotalQty.text.isEmpty ||
             _controllerIntakeTime.text.isEmpty) {
@@ -198,7 +228,11 @@ class _AddMedicineState extends State<AddMedicine> {
         counterText: '',
       ),
       keyboardType: isAmount ? TextInputType.number : TextInputType.text,
-      maxLength: isAmount ? 4 : 25,
+      maxLength: isAmount
+          ? title == 'Daily Intake'
+              ? 2
+              : 4
+          : 25,
       inputFormatters: isAmount
           ? [
               FilteringTextInputFormatter.digitsOnly,
@@ -276,8 +310,8 @@ class _AddMedicineState extends State<AddMedicine> {
                 padding: const EdgeInsets.all(20),
                 child: Column(
                   children: [
-                    Text(_controllerImageName.text),
                     Text(errorMessage),
+                    const SizedBox(height: 10),
                     _formFields(
                       true,
                       _controllerName,

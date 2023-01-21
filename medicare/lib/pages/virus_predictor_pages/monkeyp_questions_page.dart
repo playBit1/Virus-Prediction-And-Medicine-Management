@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:medicare/pages/virus_predictor_pages/virus_results_page.dart';
-import 'package:medicare/rest_api/api_service.dart';
 
 class MonkeyQuestionare extends StatefulWidget {
   const MonkeyQuestionare({super.key});

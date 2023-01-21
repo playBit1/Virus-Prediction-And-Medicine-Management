@@ -29,8 +29,12 @@ class CreateaccState extends State<Createacc> {
         errorMessage = e.message;
       });
     }
-    // ignore: use_build_context_synchronously
-    Navigator.pop(context);
+    if (errorMessage == '' ||
+        errorMessage ==
+            'The email address is already in use by another account.') {
+      // ignore: use_build_context_synchronously
+      Navigator.pop(context);
+    }
   }
 
   Widget _errorMessage() {
@@ -39,7 +43,7 @@ class CreateaccState extends State<Createacc> {
 
   Widget title() {
     return Container(
-      padding: EdgeInsets.fromLTRB(50, 0, 50, 0),
+      padding: const EdgeInsets.fromLTRB(50, 0, 50, 0),
       child: const Text(
         "Create Account",
         textAlign: TextAlign.center,
