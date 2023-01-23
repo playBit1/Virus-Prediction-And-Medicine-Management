@@ -49,7 +49,7 @@
 28-->[androidx.core:core:1.6.0] C:\Users\binul\.gradle\caches\transforms-3\aa701b47cec244085d46a1a42fcc7fb9\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
 29        android:debuggable="true"
 30        android:icon="@mipmap/ic_launcher"
-31        android:label="medicare" >
+31        android:label="MediCare" >
 32        <activity
 33            android:name="com.example.medicare.MainActivity"
 34            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"

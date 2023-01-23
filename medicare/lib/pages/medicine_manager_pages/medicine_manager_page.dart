@@ -12,7 +12,8 @@ import 'package:medicare/pages/medicine_manager_pages/add_update_medicine_page.d
 import 'package:medicare/widgets/view_medication_widget.dart';
 
 class MedsPage extends StatefulWidget {
-  const MedsPage({super.key});
+  final bool isNotified;
+  const MedsPage({super.key, this.isNotified = true});
 
   @override
   State<MedsPage> createState() => _MedsPageState();
@@ -21,16 +22,24 @@ class MedsPage extends StatefulWidget {
 class _MedsPageState extends State<MedsPage> {
   final uid = Authenticate().getUid();
   final rootRef = FirebaseDatabase.instance.ref();
-  final String? userName = Authenticate().getCurrentUserName();
+  String? userName = Authenticate().getCurrentUserName();
   late StreamSubscription _medicationDataStream;
   List<Medication> medicationList = [];
   final TextEditingController _userName = TextEditingController();
   int currentIndex = 1;
+  double _opacity = 0;
+  int tempAmount = 30;
 
   @override
   void initState() {
     super.initState();
-    NotificationApi.init();
+    //used to display the no medicine available image
+    Future.delayed(const Duration(milliseconds: 200), () {
+      setState(() {
+        _opacity = 1;
+      });
+    });
+    NotificationApi.init(initScheduled: true);
     listenNotifications();
     _getMedication();
   }
@@ -38,11 +47,16 @@ class _MedsPageState extends State<MedsPage> {
   void listenNotifications() =>
       NotificationApi.onNotifications.stream.listen(onClickedNotification);
 
-  void onClickedNotification(String? payload) => Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => const NotifiedPage(),
-        ),
-      );
+  Future<void> onClickedNotification(String? payload) async {
+    //print(payload);
+    //if (payload![0] == 'T') {
+    //await Navigator.of(context).push(
+    //MaterialPageRoute(
+    //builder: (context) => const NotifiedPage(),
+    //),
+    //);
+    //}
+  }
 
   void _getMedication() {
     _medicationDataStream =
@@ -57,18 +71,28 @@ class _MedsPageState extends State<MedsPage> {
 
       String? name = medicationData.name;
       DateTime currentTime = DateTime.now();
-      DateTime scheduleTime =
-          DateFormat('H:mm').parse(medicationData.intakeTime!);
 
-      DateTime schedulingTime = DateTime(currentTime.year, currentTime.month,
+      if (int.parse(medicationData.totalQty!) < 5 && !widget.isNotified) {
+        NotificationApi.showScheduledNotification(
+            title: medicationData.name,
+            body: 'You are running out of $name!',
+            payload: 'Running out $name',
+            scheduledDate: currentTime.add(const Duration(seconds: 5)));
+      }
+
+      DateTime scheduleTime =
+          DateFormat('H:mm a').parse(medicationData.intakeTime!);
+
+      DateTime finalTime = DateTime(currentTime.year, currentTime.month,
           currentTime.day, scheduleTime.hour, scheduleTime.minute);
 
-      if (currentTime.hour <= scheduleTime.hour) {
+      if (currentTime.hour <= finalTime.hour &&
+          currentTime.minute < finalTime.minute) {
         NotificationApi.showScheduledNotification(
             title: medicationData.name,
             body: 'Take $name Medicaiton now',
-            payload: 'Medicine  ',
-            scheduledDate: schedulingTime);
+            payload: 'Take Medicine $name',
+            scheduledDate: finalTime);
       }
 
       setState(() {});
@@ -160,6 +184,14 @@ class _MedsPageState extends State<MedsPage> {
                           _userName,
                           _medicationDataStream,
                         )),
+                  ).then(
+                    ((value) {
+                      setState(() {
+                        if (_userName.text.isNotEmpty) {
+                          userName = _userName.text;
+                        }
+                      });
+                    }),
                   ),
                   icon: Image.asset('assets/icons/logo.png'),
                 ),
@@ -193,27 +225,31 @@ class _MedsPageState extends State<MedsPage> {
               child: Column(
                 children: [
                   if (medicationList.isEmpty)
-                    Column(
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only(top: 150, left: 25),
-                          child: Image.asset(
-                            'assets/icons/pills-bottle.png',
-                            height: 200,
-                            opacity: const AlwaysStoppedAnimation(.5),
+                    AnimatedOpacity(
+                      opacity: _opacity,
+                      duration: const Duration(seconds: 10),
+                      child: Column(
+                        children: [
+                          Container(
+                            margin: const EdgeInsets.only(top: 150, left: 25),
+                            child: Image.asset(
+                              'assets/icons/pills-bottle.png',
+                              height: 200,
+                              opacity: const AlwaysStoppedAnimation(.5),
+                            ),
                           ),
-                        ),
-                        ConstrainedBox(
-                          constraints: const BoxConstraints(maxWidth: 200),
-                          child: Text(
-                            'No Medication Avaiable',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 25,
-                                color: Colors.black.withOpacity(0.5)),
-                          ),
-                        )
-                      ],
+                          ConstrainedBox(
+                            constraints: const BoxConstraints(maxWidth: 200),
+                            child: Text(
+                              'No Medication Avaiable',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 25,
+                                  color: Colors.black.withOpacity(0.5)),
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   for (int i = 0; i < medicationList.length; i++)
                     displayMedication(
@@ -244,6 +280,7 @@ class _MedsPageState extends State<MedsPage> {
   @override
   void deactivate() {
     _medicationDataStream.cancel();
+
     super.deactivate();
   }
 }

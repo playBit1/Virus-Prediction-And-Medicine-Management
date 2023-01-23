@@ -3,11 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/services.dart';
 import 'package:medicare/widget_tree.dart';
-// ignore: depend_on_referenced_packages
-import 'package:timezone/data/latest.dart' as tz;
 
 Future<void> main() async {
-  tz.initializeTimeZones();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   FirebaseDatabase.instance.setPersistenceEnabled(true);

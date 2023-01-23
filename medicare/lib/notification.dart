@@ -2,6 +2,9 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:rxdart/rxdart.dart';
 // ignore: depend_on_referenced_packages
 import 'package:timezone/timezone.dart' as tz;
+// ignore: depend_on_referenced_packages
+import 'package:timezone/data/latest.dart' as tz;
+import 'package:flutter_native_timezone/flutter_native_timezone.dart';
 
 class NotificationApi {
   static final _notifications = FlutterLocalNotificationsPlugin();
@@ -20,10 +23,21 @@ class NotificationApi {
     final android = AndroidInitializationSettings('@mipmap/ic_launcher');
     final settings = InitializationSettings(android: android);
 
+    final details = await _notifications.getNotificationAppLaunchDetails();
+    if (details != null && details.didNotificationLaunchApp) {
+      onNotifications.add(details.notificationResponse!.payload);
+    }
+
     await _notifications.initialize(settings,
         onDidReceiveNotificationResponse: (payload) async {
       onNotifications.add(payload.payload);
     });
+
+    if (initScheduled) {
+      tz.initializeTimeZones();
+      final locationName = await FlutterNativeTimezone.getLocalTimezone();
+      tz.setLocalLocation(tz.getLocation(locationName));
+    }
   }
 
   static Future showScheduledNotification({

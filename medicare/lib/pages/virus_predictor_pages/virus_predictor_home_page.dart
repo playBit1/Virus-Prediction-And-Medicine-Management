@@ -35,22 +35,24 @@ class _VirusHomePageState extends State<VirusHomePage> {
                 ));
       }),
       style: ElevatedButton.styleFrom(
-        fixedSize: const Size(300, 180),
-        backgroundColor:
-            isCovid ? const Color(0xff62B6CB) : const Color(0xff30859A),
-        elevation: 10,
-      ),
+          fixedSize: const Size(300, 180),
+          backgroundColor: isCovid
+              ? const Color(0xff62B6CB)
+              : Color.fromARGB(255, 36, 92, 133),
+          elevation: 15,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const SizedBox(height: 10),
+          const SizedBox(height: 4),
           Text(
             name,
             style: const TextStyle(fontSize: 20),
           ),
-          const SizedBox(height: 10),
           Image.asset(
             isCovid ? 'assets/icons/covid.png' : 'assets/icons/monkeypox.png',
-            width: 130,
+            width: 150,
           )
         ],
       ),
@@ -136,8 +138,8 @@ class _VirusHomePageState extends State<VirusHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  'Choose you Predictor',
-                  style: TextStyle(fontSize: 35),
+                  'Choose your Predictor',
+                  style: TextStyle(fontSize: 20),
                 ),
                 const SizedBox(height: 15),
                 _designerButton(true),

@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:medicare/database/authenticate.dart';
+import 'package:medicare/pages/log_sign_in_pages/login_page.dart';
 
 class Createacc extends StatefulWidget {
   const Createacc({super.key});
@@ -12,6 +13,7 @@ class Createacc extends StatefulWidget {
 
 class CreateaccState extends State<Createacc> {
   String? errorMessage = '';
+  bool isDone = false;
 
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -25,20 +27,39 @@ class CreateaccState extends State<Createacc> {
         password: _passwordController.text,
       );
     } on FirebaseAuthException catch (e) {
-      setState(() {
-        errorMessage = e.message;
-      });
-    }
-    if (errorMessage == '' ||
-        errorMessage ==
-            'The email address is already in use by another account.') {
-      // ignore: use_build_context_synchronously
-      Navigator.pop(context);
+      setState(() {});
+      switch (e.code) {
+        case "invalid-email":
+          errorMessage = "Invalid Email";
+          break;
+        case "weak-password":
+          errorMessage = "Weak Password";
+          break;
+        case "unknown":
+          errorMessage = "Please enter your Username, Email and Password";
+          break;
+        case "email-already-in-use":
+          errorMessage = "Email is already in use";
+          break;
+        case "ERROR_TOO_MANY_REQUESTS":
+          errorMessage = "Too many requests. Try again later.";
+          break;
+        case "ERROR_OPERATION_NOT_ALLOWED":
+          errorMessage = "Signing in with Email and Password is not enabled.";
+          break;
+        default:
+          errorMessage = 'Error';
+      }
     }
   }
 
   Widget _errorMessage() {
-    return Text(errorMessage == '' ? '' : 'Error: $errorMessage');
+    return Padding(
+      padding: const EdgeInsets.only(top: 10),
+      child: Text(errorMessage == '' ? '' : 'Error: $errorMessage',
+          style:
+              const TextStyle(color: Colors.red, fontWeight: FontWeight.w500)),
+    );
   }
 
   Widget title() {
@@ -65,8 +86,10 @@ class CreateaccState extends State<Createacc> {
       child: TextField(
         controller: controller,
         obscureText: isEmail ? false : true,
+        maxLength: isEmail ? 256 : 127,
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.all(16),
+          counterText: '',
           labelText: isEmail ? "Email" : "Password",
           hintText: isEmail ? "Enter Email" : "Enter Password",
           prefixIcon: isEmail

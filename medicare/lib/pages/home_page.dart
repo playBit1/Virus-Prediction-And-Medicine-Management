@@ -5,10 +5,16 @@ import 'package:medicare/pages/medicine_manager_pages/medicine_manager_page.dart
 import 'package:medicare/pages/virus_predictor_pages/virus_predictor_home_page.dart';
 import 'package:medicare/widgets/user_dialog_widget.dart';
 
-class HomePage extends StatelessWidget {
-  HomePage({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
-  final User? user = Authenticate().currentUser;
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  String? uName = Authenticate().getCurrentUserName();
+
   final TextEditingController _userName = TextEditingController();
 
   Widget _navButton(
@@ -34,10 +40,15 @@ class HomePage extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (_) =>
-                isPredictor ? const VirusHomePage() : const MedsPage(),
+            builder: (_) => isPredictor
+                ? const VirusHomePage()
+                : const MedsPage(isNotified: false),
           ),
-        );
+        ).then((value) {
+          setState(() {
+            uName = Authenticate().getCurrentUserName();
+          });
+        });
       },
       child: Text(
         buttonName,
@@ -48,32 +59,58 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _logo(BuildContext context) {
-    return Container(
-      alignment: Alignment.topRight,
-      padding: const EdgeInsets.only(right: 20, top: 10),
-      child: IconButton(
-        onPressed: () => showDialog(
-          context: context,
-          builder: ((BuildContext context) => userDialogBoxMenu(
-                context,
-                _userName,
-              )),
-        ),
-        icon: Transform.scale(
-          scale: 2,
-          child: Image.asset(
-            'assets/icons/logo.png',
-            //alignment: Alignment.topRight,
-            width: 100,
-            height: 100,
+    uName == null ? uName = '' : '';
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(left: 15),
+          child: Text(
+            '$uName',
+            style: const TextStyle(
+              fontSize: 24,
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
-      ),
+        Container(
+          alignment: Alignment.topRight,
+          padding: const EdgeInsets.only(right: 20, top: 10),
+          child: IconButton(
+            onPressed: () => showDialog(
+              context: context,
+              builder: ((BuildContext context) => userDialogBoxMenu(
+                    context,
+                    _userName,
+                  )),
+            ).then(
+              ((value) {
+                setState(() {
+                  if (_userName.text.isNotEmpty) {
+                    uName = _userName.text;
+                  }
+                });
+              }),
+            ),
+            icon: Transform.scale(
+              scale: 2,
+              child: Image.asset(
+                'assets/icons/logo.png',
+                //alignment: Alignment.topRight,
+                width: 100,
+                height: 100,
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 
   @override
   Widget build(BuildContext context) {
+    setState(() {});
     double buttonWidth = MediaQuery.of(context).size.width - 60;
     double buttonHeight = MediaQuery.of(context).size.height - 475;
     return Scaffold(

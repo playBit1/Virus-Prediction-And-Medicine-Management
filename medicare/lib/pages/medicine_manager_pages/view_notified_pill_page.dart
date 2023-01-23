@@ -12,4 +12,10 @@ class _NotifiedPageState extends State<NotifiedPage> {
   Widget build(BuildContext context) {
     return const Scaffold();
   }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+  }
 }

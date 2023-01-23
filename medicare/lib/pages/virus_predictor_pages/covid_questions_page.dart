@@ -177,6 +177,15 @@ class _CovidQuestionareState extends State<CovidQuestionare> {
     );
   }
 
+  Widget _backButton() {
+    return IconButton(
+      padding: const EdgeInsets.only(top: 20, right: 330),
+      onPressed: () => Navigator.pop(context),
+      icon: Image.asset('assets/icons/backArrow.png'),
+      iconSize: 50,
+    );
+  }
+
   Widget _topDesign() {
     return Container(
       alignment: Alignment.bottomLeft,
@@ -192,9 +201,8 @@ class _CovidQuestionareState extends State<CovidQuestionare> {
             width: MediaQuery.of(context).size.width,
             child: Column(
               children: [
-                const SizedBox(
-                  height: 80,
-                ),
+                _backButton(),
+                const SizedBox(height: 10),
                 const Text(
                   'Virus Predictor',
                   style: TextStyle(
