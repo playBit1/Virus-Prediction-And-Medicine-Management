@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">396539839641-0q5593u3o4rps3saktfilq6ipqn2gmrt.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://virusandmedicine-46af5-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+    <string name="gcm_defaultSenderId" translatable="false">396539839641</string>
+    <string name="google_api_key" translatable="false">AIzaSyAMCJWhoX22p2L-VFjIRot-FNt09JjEU3A</string>
+    <string name="google_app_id" translatable="false">1:396539839641:android:2eea74f6fec74e7802e408</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAMCJWhoX22p2L-VFjIRot-FNt09JjEU3A</string>
+    <string name="google_storage_bucket" translatable="false">virusandmedicine-46af5.appspot.com</string>
+    <string name="project_id" translatable="false">virusandmedicine-46af5</string>
+</resources>

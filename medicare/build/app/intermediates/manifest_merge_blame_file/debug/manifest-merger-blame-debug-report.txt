@@ -1,0 +1,316 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.teami.medicare"
+4    android:versionCode="1"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="31" />
+10    <!--
+11         The INTERNET permission is required for development. Specifically,
+12         the Flutter tool needs it to communicate with the running application
+13         to allow setting breakpoints, to provide hot reload, etc.
+14    -->
+15    <uses-permission android:name="android.permission.INTERNET" />
+15-->C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\android\app\src\debug\AndroidManifest.xml:7:5-66
+15-->C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\android\app\src\debug\AndroidManifest.xml:7:22-64
+16    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+16-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-81
+16-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-78
+17    <uses-permission android:name="android.permission.VIBRATE" />
+17-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:5-66
+17-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:10:22-63
+18    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+18-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-81
+18-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:11:22-78
+19    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+19-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:12:5-79
+19-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:12:22-76
+20    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+20-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:13:5-77
+20-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:13:22-74
+21    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+21-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:24:5-79
+21-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:24:22-76
+22    <uses-permission android:name="android.permission.WAKE_LOCK" />
+22-->[com.google.android.gms:play-services-measurement-api:21.2.0] C:\Users\binul\.gradle\caches\transforms-3\bfd20290ff5d39e38453adc1ae5698f7\transformed\jetified-play-services-measurement-api-21.2.0\AndroidManifest.xml:24:5-68
+22-->[com.google.android.gms:play-services-measurement-api:21.2.0] C:\Users\binul\.gradle\caches\transforms-3\bfd20290ff5d39e38453adc1ae5698f7\transformed\jetified-play-services-measurement-api-21.2.0\AndroidManifest.xml:24:22-65
+23    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+23-->[com.google.android.gms:play-services-measurement-api:21.2.0] C:\Users\binul\.gradle\caches\transforms-3\bfd20290ff5d39e38453adc1ae5698f7\transformed\jetified-play-services-measurement-api-21.2.0\AndroidManifest.xml:25:5-79
+23-->[com.google.android.gms:play-services-measurement-api:21.2.0] C:\Users\binul\.gradle\caches\transforms-3\bfd20290ff5d39e38453adc1ae5698f7\transformed\jetified-play-services-measurement-api-21.2.0\AndroidManifest.xml:25:22-76
+24    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+24-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\binul\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:26:5-110
+24-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\binul\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:26:22-107
+25
+26    <application
+27        android:name="android.app.Application"
+28        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+28-->[androidx.core:core:1.6.0] C:\Users\binul\.gradle\caches\transforms-3\aa701b47cec244085d46a1a42fcc7fb9\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
+29        android:debuggable="true"
+30        android:icon="@mipmap/ic_launcher"
+31        android:label="MediCare" >
+32        <activity
+33            android:name="com.example.medicare.MainActivity"
+34            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+35            android:exported="true"
+36            android:hardwareAccelerated="true"
+37            android:launchMode="singleTop"
+38            android:theme="@style/LaunchTheme"
+39            android:windowSoftInputMode="adjustResize" >
+40
+41            <!--
+42                 Specifies an Android theme to apply to this Activity as soon as
+43                 the Android process has started. This theme is visible to the user
+44                 while the Flutter UI initializes. After that, this theme continues
+45                 to determine the Window background behind the Flutter UI.
+46            -->
+47            <meta-data
+48                android:name="io.flutter.embedding.android.NormalTheme"
+49                android:resource="@style/NormalTheme" />
+50
+51            <intent-filter>
+52                <action android:name="android.intent.action.MAIN" />
+53
+54                <category android:name="android.intent.category.LAUNCHER" />
+55            </intent-filter>
+56        </activity>
+57        <!--
+58             Don't delete the meta-data below.
+59             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+60        -->
+61        <meta-data
+62            android:name="flutterEmbedding"
+63            android:value="2" />
+64
+65        <service
+65-->[:firebase_auth] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-14:19
+66            android:name="com.google.firebase.components.ComponentDiscoveryService"
+66-->[:firebase_auth] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:10:18-89
+67            android:directBootAware="true"
+67-->[com.google.firebase:firebase-common:20.2.0] C:\Users\binul\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:34:13-43
+68            android:exported="false" >
+68-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:66:13-37
+69            <meta-data
+69-->[:firebase_auth] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+70                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
+70-->[:firebase_auth] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+71                android:value="com.google.firebase.components.ComponentRegistrar" />
+71-->[:firebase_auth] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+72            <meta-data
+72-->[:firebase_database] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+73                android:name="com.google.firebase.components:io.flutter.plugins.firebase.database.FlutterFirebaseAppRegistrar"
+73-->[:firebase_database] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-127
+74                android:value="com.google.firebase.components.ComponentRegistrar" />
+74-->[:firebase_database] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\firebase_database\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+75            <meta-data
+75-->[:firebase_core] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+76                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+76-->[:firebase_core] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+77                android:value="com.google.firebase.components.ComponentRegistrar" />
+77-->[:firebase_core] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+78            <meta-data
+78-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:67:13-69:85
+79                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+79-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:68:17-109
+80                android:value="com.google.firebase.components.ComponentRegistrar" />
+80-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:69:17-82
+81            <meta-data
+81-->[com.google.firebase:firebase-database:20.1.0] C:\Users\binul\.gradle\caches\transforms-3\213a1dfac06a559ac66124b026fba95a\transformed\jetified-firebase-database-20.1.0\AndroidManifest.xml:31:13-33:85
+82                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+82-->[com.google.firebase:firebase-database:20.1.0] C:\Users\binul\.gradle\caches\transforms-3\213a1dfac06a559ac66124b026fba95a\transformed\jetified-firebase-database-20.1.0\AndroidManifest.xml:32:17-109
+83                android:value="com.google.firebase.components.ComponentRegistrar" />
+83-->[com.google.firebase:firebase-database:20.1.0] C:\Users\binul\.gradle\caches\transforms-3\213a1dfac06a559ac66124b026fba95a\transformed\jetified-firebase-database-20.1.0\AndroidManifest.xml:33:17-82
+84            <meta-data
+84-->[com.google.android.gms:play-services-measurement-api:21.2.0] C:\Users\binul\.gradle\caches\transforms-3\bfd20290ff5d39e38453adc1ae5698f7\transformed\jetified-play-services-measurement-api-21.2.0\AndroidManifest.xml:31:13-33:85
+85                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+85-->[com.google.android.gms:play-services-measurement-api:21.2.0] C:\Users\binul\.gradle\caches\transforms-3\bfd20290ff5d39e38453adc1ae5698f7\transformed\jetified-play-services-measurement-api-21.2.0\AndroidManifest.xml:32:17-139
+86                android:value="com.google.firebase.components.ComponentRegistrar" />
+86-->[com.google.android.gms:play-services-measurement-api:21.2.0] C:\Users\binul\.gradle\caches\transforms-3\bfd20290ff5d39e38453adc1ae5698f7\transformed\jetified-play-services-measurement-api-21.2.0\AndroidManifest.xml:33:17-82
+87            <meta-data
+87-->[com.google.firebase:firebase-installations:17.1.0] C:\Users\binul\.gradle\caches\transforms-3\3fe9d54d7b663dbec51ad86b1763f50a\transformed\jetified-firebase-installations-17.1.0\AndroidManifest.xml:17:13-19:85
+88                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+88-->[com.google.firebase:firebase-installations:17.1.0] C:\Users\binul\.gradle\caches\transforms-3\3fe9d54d7b663dbec51ad86b1763f50a\transformed\jetified-firebase-installations-17.1.0\AndroidManifest.xml:18:17-127
+89                android:value="com.google.firebase.components.ComponentRegistrar" />
+89-->[com.google.firebase:firebase-installations:17.1.0] C:\Users\binul\.gradle\caches\transforms-3\3fe9d54d7b663dbec51ad86b1763f50a\transformed\jetified-firebase-installations-17.1.0\AndroidManifest.xml:19:17-82
+90        </service>
+91
+92        <receiver
+92-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:16:9-18:40
+93            android:name="com.dexterous.flutterlocalnotifications.ActionBroadcastReceiver"
+93-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:17:13-91
+94            android:exported="false" />
+94-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:18:13-37
+95        <receiver
+95-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:19:9-21:40
+96            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationReceiver"
+96-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:20:13-97
+97            android:exported="false" />
+97-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:21:13-37
+98        <receiver
+98-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:22:9-31:20
+99            android:name="com.dexterous.flutterlocalnotifications.ScheduledNotificationBootReceiver"
+99-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:23:13-101
+100            android:exported="false" >
+100-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:24:13-37
+101            <intent-filter>
+101-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:25:13-30:29
+102                <action android:name="android.intent.action.BOOT_COMPLETED" />
+102-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:17-79
+102-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:26:25-76
+103                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+103-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:27:17-84
+103-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:27:25-81
+104                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+104-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:28:17-82
+104-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:28:25-79
+105                <action android:name="com.htc.intent.action.QUICKBOOT_POWERON" />
+105-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:29:17-82
+105-->[:flutter_local_notifications] C:\Users\binul\OneDrive\Desktop\Virus-Prediction-And-Medicine-Management\medicare\build\flutter_local_notifications\intermediates\merged_manifest\debug\AndroidManifest.xml:29:25-79
+106            </intent-filter>
+107        </receiver>
+108
+109        <uses-library
+109-->[androidx.window:window:1.0.0-beta04] C:\Users\binul\.gradle\caches\transforms-3\542a859793ec57d6a4d40865c7efc6d9\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+110            android:name="androidx.window.extensions"
+110-->[androidx.window:window:1.0.0-beta04] C:\Users\binul\.gradle\caches\transforms-3\542a859793ec57d6a4d40865c7efc6d9\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+111            android:required="false" />
+111-->[androidx.window:window:1.0.0-beta04] C:\Users\binul\.gradle\caches\transforms-3\542a859793ec57d6a4d40865c7efc6d9\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+112        <uses-library
+112-->[androidx.window:window:1.0.0-beta04] C:\Users\binul\.gradle\caches\transforms-3\542a859793ec57d6a4d40865c7efc6d9\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+113            android:name="androidx.window.sidecar"
+113-->[androidx.window:window:1.0.0-beta04] C:\Users\binul\.gradle\caches\transforms-3\542a859793ec57d6a4d40865c7efc6d9\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+114            android:required="false" />
+114-->[androidx.window:window:1.0.0-beta04] C:\Users\binul\.gradle\caches\transforms-3\542a859793ec57d6a4d40865c7efc6d9\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+115
+116        <activity
+116-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:27:9-44:20
+117            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+117-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:28:13-80
+118            android:excludeFromRecents="true"
+118-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:29:13-46
+119            android:exported="true"
+119-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:30:13-36
+120            android:launchMode="singleTask"
+120-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:31:13-44
+121            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+121-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:32:13-72
+122            <intent-filter>
+122-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:33:13-43:29
+123                <action android:name="android.intent.action.VIEW" />
+123-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:34:17-69
+123-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:34:25-66
+124
+125                <category android:name="android.intent.category.DEFAULT" />
+125-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:36:17-76
+125-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:36:27-73
+126                <category android:name="android.intent.category.BROWSABLE" />
+126-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:37:17-78
+126-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:37:27-75
+127
+128                <data
+128-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:39:17-42:51
+129                    android:host="firebase.auth"
+129-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:40:21-49
+130                    android:path="/"
+130-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:41:21-37
+131                    android:scheme="genericidp" />
+131-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:42:21-48
+132            </intent-filter>
+133        </activity>
+134        <activity
+134-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:45:9-62:20
+135            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+135-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:46:13-79
+136            android:excludeFromRecents="true"
+136-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:47:13-46
+137            android:exported="true"
+137-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:48:13-36
+138            android:launchMode="singleTask"
+138-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:49:13-44
+139            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+139-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:50:13-72
+140            <intent-filter>
+140-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:51:13-61:29
+141                <action android:name="android.intent.action.VIEW" />
+141-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:34:17-69
+141-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:34:25-66
+142
+143                <category android:name="android.intent.category.DEFAULT" />
+143-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:36:17-76
+143-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:36:27-73
+144                <category android:name="android.intent.category.BROWSABLE" />
+144-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:37:17-78
+144-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:37:27-75
+145
+146                <data
+146-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:39:17-42:51
+147                    android:host="firebase.auth"
+147-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:40:21-49
+148                    android:path="/"
+148-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:41:21-37
+149                    android:scheme="recaptcha" />
+149-->[com.google.firebase:firebase-auth:21.1.0] C:\Users\binul\.gradle\caches\transforms-3\0548e507d3019ac84ce4969b57803f45\transformed\jetified-firebase-auth-21.1.0\AndroidManifest.xml:42:21-48
+150            </intent-filter>
+151        </activity>
+152
+153        <provider
+153-->[com.google.firebase:firebase-common:20.2.0] C:\Users\binul\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:25:9-30:39
+154            android:name="com.google.firebase.provider.FirebaseInitProvider"
+154-->[com.google.firebase:firebase-common:20.2.0] C:\Users\binul\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:26:13-77
+155            android:authorities="com.teami.medicare.firebaseinitprovider"
+155-->[com.google.firebase:firebase-common:20.2.0] C:\Users\binul\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:27:13-72
+156            android:directBootAware="true"
+156-->[com.google.firebase:firebase-common:20.2.0] C:\Users\binul\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:28:13-43
+157            android:exported="false"
+157-->[com.google.firebase:firebase-common:20.2.0] C:\Users\binul\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:29:13-37
+158            android:initOrder="100" />
+158-->[com.google.firebase:firebase-common:20.2.0] C:\Users\binul\.gradle\caches\transforms-3\c1f7cd0e68ddf89c76a753ac7fd1a66c\transformed\jetified-firebase-common-20.2.0\AndroidManifest.xml:30:13-36
+159
+160        <receiver
+160-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\binul\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:29:9-33:20
+161            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+161-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\binul\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:30:13-85
+162            android:enabled="true"
+162-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\binul\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:31:13-35
+163            android:exported="false" >
+163-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\binul\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:32:13-37
+164        </receiver>
+165
+166        <service
+166-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\binul\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:35:9-38:40
+167            android:name="com.google.android.gms.measurement.AppMeasurementService"
+167-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\binul\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:36:13-84
+168            android:enabled="true"
+168-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\binul\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:37:13-35
+169            android:exported="false" />
+169-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\binul\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:38:13-37
+170        <service
+170-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\binul\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:39:9-43:72
+171            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+171-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\binul\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:40:13-87
+172            android:enabled="true"
+172-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\binul\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:41:13-35
+173            android:exported="false"
+173-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\binul\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:42:13-37
+174            android:permission="android.permission.BIND_JOB_SERVICE" />
+174-->[com.google.android.gms:play-services-measurement:21.2.0] C:\Users\binul\.gradle\caches\transforms-3\5ec3faad4c67c5d02d41a8d7d7f45ea7\transformed\jetified-play-services-measurement-21.2.0\AndroidManifest.xml:43:13-69
+175
+176        <activity
+176-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\binul\.gradle\caches\transforms-3\19fea4fb28dedd992824e13cc158e7a1\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:9-22:45
+177            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+177-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\binul\.gradle\caches\transforms-3\19fea4fb28dedd992824e13cc158e7a1\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:20:19-85
+178            android:exported="false"
+178-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\binul\.gradle\caches\transforms-3\19fea4fb28dedd992824e13cc158e7a1\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:22:19-43
+179            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+179-->[com.google.android.gms:play-services-base:18.0.1] C:\Users\binul\.gradle\caches\transforms-3\19fea4fb28dedd992824e13cc158e7a1\transformed\jetified-play-services-base-18.0.1\AndroidManifest.xml:21:19-78
+180
+181        <meta-data
+181-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\binul\.gradle\caches\transforms-3\3ee0f8915dc9bf42c60f3eef0b7bd28a\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:21:9-23:69
+182            android:name="com.google.android.gms.version"
+182-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\binul\.gradle\caches\transforms-3\3ee0f8915dc9bf42c60f3eef0b7bd28a\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:22:13-58
+183            android:value="@integer/google_play_services_version" />
+183-->[com.google.android.gms:play-services-basement:18.1.0] C:\Users\binul\.gradle\caches\transforms-3\3ee0f8915dc9bf42c60f3eef0b7bd28a\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:23:13-66
+184    </application>
+185
+186</manifest>
